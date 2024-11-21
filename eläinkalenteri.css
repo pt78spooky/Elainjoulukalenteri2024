@@ -7,7 +7,7 @@ body{
     background-size: cover;
 }
 h1{
-    font-size: 3vw;
+    font-size: 6vw;
     text-align: center;
     color: white;
     text-shadow: 3px 3px 5px rgb(29, 29, 29);
@@ -50,7 +50,7 @@ p{
     background-color: rgb(189, 0, 0);
 }
 footer{
-    font-size: 1.5vw;
+    font-size: 3vw;
     margin: 50px;
     margin-top: 70px;
     color: white;
@@ -71,9 +71,9 @@ img{
     background-color: red;
     color: white;
     text-shadow: 3px 3px 10px rgb(0, 0, 0);
-    font-size: 1.5vw;
-    height: 10vw;
-    width: 20vw;
+    font-size: 4vw;
+    height: 30vw;
+    width: 60vw;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -84,9 +84,17 @@ img{
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-@media screen and (max-width: 1000px){
-    aside, section, article{
-        width: 100%;
+@media screen and (min-width: 768px){
+    h1{
+        font-size: 4vw;
+    }
+    footer{
+        font-size: 2vw;
+    }
+    .popup{
+        height: 10vw;
+        width: 20vw;
+        font-size: 2vw;
     }
 }
 @keyframes glowBox{
@@ -96,5 +104,5 @@ img{
 
 @keyframes fadeOut{
     from {opacity :1;}
-    to {opacity :0;}
+    to {opacity :0; display:none;}
 }
