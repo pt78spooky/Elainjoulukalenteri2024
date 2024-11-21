@@ -2,6 +2,7 @@
 const kalenteri = document.querySelector(".kalenteri");
 const calendarDays = 24;
 const kuvateksti = document.querySelector(".kuvaus");
+const ilmoitus = document.querySelector(".ilmoitus");
 
 const date = new Date();
 const currentDate = date.toLocaleString();
@@ -14,13 +15,16 @@ console.log("day: "+day+" month: "+month);
 const openDoor = (path, event) => {
     event.target.parentNode.style.border = "5px solid rgb(255, 0, 0)";
     event.target.parentNode.style.backgroundColor = "rgba(0, 0, 0, 0)";
-    event.target.parentNode.style.backgroundImage = `url(${path})`;
+    event.target.parentNode.style.backgroundImage = `url(./images/${path}.png)`;
     event.target.style.opacity = "0";
     event.target.style.backgroundColor = "#FF0000";
 }
 
 const errorMessage = (path, event) => {
-    console.log("not yet "+path+".12");
+    const popup = document.createElement('div');
+    popup.classList.add("popup");
+    ilmoitus.appendChild(popup);
+    popup.innerHTML = "Ei ole vielä "+path+".12.";
 }
 
 for(let i=0; i<calendarDays; i++){
@@ -36,14 +40,15 @@ for(let i=0; i<calendarDays; i++){
     door.appendChild(text   );
 
     pvm = i + 1;
-    let kuvapolku = `./images/${pvm}.png`;
 
     if(day == pvm){
-        door.style.boxShadow = "0px 0px 40px white";
+        door.style.animationName = "glowBox";
+        door.style.animationDuration = "2s";
+        door.style.animationIterationCount = "infinite";
     }
 
     if(day >= pvm && month == 11){
-        text.addEventListener("click", openDoor.bind(null, kuvapolku));
+        text.addEventListener("click", openDoor.bind(null, pvm));
     }
     else{
         text.addEventListener("click", errorMessage.bind(null, pvm));
