@@ -3,14 +3,13 @@
     text-align: center;
 }
 body{
-    background-image: url("https://dreamypixel.com/wp-content/uploads/2017/08/Starry-night-in-the-winter-mountains.jpg");
-    background-size: cover;
+    background-image: url("https://www.filterforge.com/filters/1361.jpg");
 }
 h1{
-    font-size: 5vw;
+    font-size: 6vw;
     text-align: center;
     color: white;
-    text-shadow: 3px 3px 5px rgb(29, 29, 29);
+    text-shadow: 3px 3px 10px rgb(29, 29, 29);
 }
 p{
     font-size: 2vw;
@@ -85,6 +84,10 @@ img{
     animation-fill-mode: forwards;
 }
 @media screen and (min-width: 768px){
+    body{
+        background-image: url("https://dreamypixel.com/wp-content/uploads/2017/08/Starry-night-in-the-winter-mountains.jpg");
+        background-size: repeat;
+    }
     h1{
         font-size: 4vw;
     }
