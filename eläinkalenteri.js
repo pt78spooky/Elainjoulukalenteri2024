@@ -47,7 +47,7 @@ for(let i=0; i<calendarDays; i++){
         door.style.animationIterationCount = "infinite";
     }
 
-    if(day >= pvm && month == 11){
+    if(day >= pvm && month == 12){
         text.addEventListener("click", openDoor.bind(null, pvm));
     }
     else{
